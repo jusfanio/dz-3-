@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  g56l3
+//  G56L3
 //
-//  Created by Alesia on 04/09/2017.
+//  Created by Alesia Mjau on 25/08/17.
 //  Copyright © 2017 Alesia. All rights reserved.
 //
 
@@ -47,9 +47,10 @@ class ViewController: UIViewController {
         var oddNumbers = [1,3,9,17,5]
 
         print("Initial array's numbers: \(oddNumbers)")
-        for _ in 0..<oddNumbers.count {
-            oddNumbers.removeLast()
-        }
+        oddNumbers.removeAll()
+        //        for _ in 0..<oddNumbers.count {
+        //            oddNumbers.removeLast()
+        //        }
         print("Array's numbers have been removed")
 
         print("======================================================")
@@ -57,24 +58,27 @@ class ViewController: UIViewController {
         print("Collection Types. Task 2")
         let arrayOne = [1, 2, 5]
         let arrayTwo = [7, 3, 9, 11]
-        let combineTwoArraysResult = arrayOne + arrayTwo
-
-        print("Combined arrays numbers: \(combineTwoArraysResult)")
+        combineArrays(arrayOne: arrayOne, arrayTwo: arrayTwo)
+        //        let combineTwoArraysResult = arrayOne + arrayTwo
+        //
+        //        print("Combined arrays numbers: \(combineTwoArraysResult)")
 
         print("======================================================")
 
         print("Collection Types. Task 3")
         let allElementsInArray = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-        elementsOfArrayInRow(myNumbersInArray: allElementsInArray)
+        printAllElements(ofArray: allElementsInArray)
 
         print("======================================================")
 
         print("Collection Types. Task 4")
         let stringArray: [String] = ["Paris", "London", "Tallinn", "Oslo", "Kiev"]
-        let finalArrayFromFirstAndLastElements = firstAndLastElementsInArray(stringArray: stringArray)
-        print(finalArrayFromFirstAndLastElements)
-        let nonOptionalFirstElement: String! = finalArrayFromFirstAndLastElements.first
-        let nonOptionalLastElement: String! = finalArrayFromFirstAndLastElements.last
+        let firstAndLastElementsInArrayPrint = firstAndLastElementsInArray(stringArray: stringArray)
+        print(firstAndLastElementsInArrayPrint)
+        //        let finalArrayFromFirstAndLastElements = firstAndLastElementsInArray(stringArray: stringArray)
+        //        print(finalArrayFromFirstAndLastElements)
+        let nonOptionalFirstElement: String! = firstAndLastElementsInArrayPrint.first
+        let nonOptionalLastElement: String! = firstAndLastElementsInArrayPrint.last
         print(nonOptionalFirstElement)
         print(nonOptionalLastElement)
 
@@ -145,16 +149,14 @@ class ViewController: UIViewController {
         print("======================================================")
 
         print("Collection Types. Medium. Task 3")
-        let arrayNumbersValues = [1, 7, 2, 16, 12, 75, 122, 3, 55]
+        let arrayNumbersValues = [1, 7, 2, 16, 12, 75, 122, 3, 55, 7, 1]
         print("Initial array values are: \(arrayNumbersValues)")
         sortArrayValues(myArray: arrayNumbersValues)
 
         uniqueElementsFrom(myArray: arrayNumbersValues)
-
     }
-
-
 }
+
 
 // Homework 3. Task 1. Создать​ ​строку​ ​со​ ​своим​ ​именем.​ ​Написать​ ​метод​ ​который​ ​получает​ ​это​ ​имя​ ​и возвращает​ ​кол-во​ ​символов​ ​в​ ​строке​ ​с​ ​вашим​ ​именем.​ ​Возвращенное​ ​значение показать​ ​в​ ​консоль
 
@@ -188,17 +190,23 @@ func checkIfUserManOrWoman(userPatronymic: String) -> String {
 }
 
 
-//Homework 3. Colection Types. Task 2. Создать массив со значениями типа Int. Выполнить удаление всех элементов массива.
+//Homework 3. Colection Types. Task 1. Создать массив со значениями типа Int. Выполнить удаление всех элементов массива.
 //    РЕШЕНИЕ СМОТРЕТЬ ВЫШЕ :)
 
 
 // Homework 3. Colection Types. Task 2.	Создать 2 массива со значениями типа Int. Сделать соединение данных массивов. Результат вывести в консоль.
 //    РЕШЕНИЕ СМОТРЕТЬ ВЫШЕ :)
 
+func combineArrays(arrayOne: [Int], arrayTwo: [Int]) {
+    let combineTwoArraysResult = arrayOne + arrayTwo
+
+    print("Combined arrays numbers: \(combineTwoArraysResult)")
+}
+
 // Homework 3. Colection Types. Task 3.	Создать массив с любыми значениями типа строка. Создать метод который будет принимать как аргумент массив. Метод должен выводить в консоль элементы массива (по одному в одной строке)
 
-func elementsOfArrayInRow(myNumbersInArray: [String]) {
-    for element in myNumbersInArray {
+func printAllElements(ofArray: [String]) {
+    for element in ofArray {
         print(element)
     }
 }
@@ -209,7 +217,7 @@ func firstAndLastElementsInArray(stringArray: [String]) -> [String] {
     if stringArray.isEmpty {
         return ["Array is empty"]
     } else {
-        let arrayFromFirstAndLastElements: [String] = [stringArray.first!] + [stringArray.last!]
+        let arrayFromFirstAndLastElements: [String] = [stringArray.first!, stringArray.last!]
         return arrayFromFirstAndLastElements
     }
 }
@@ -274,8 +282,54 @@ func uniqueElementsFrom(myArray: [Int]) -> [Int] {
         set.insert($0)
         return true
     }
+    print("Unique elements from array are: \(result)")
     return result
 }
 
+// Homework 3. Colection Types. Medium. Task 4.
+//Во ViewDidLoad создать словарь внутри которого будет 2 словаря (ключ - строка, значение - словарь). С любыми данными. Их мы будем передавать в метод, который напишем.
+//Создать метод который будет принимать как параметры: словарь (такого типа как выше) и строку. Данный метод должен вернуть значение которое хранится внутри элемента ключ которого был передан как аргумент.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        Tests :)
+//        var firstNumber = 10
+//        while firstNumber > 0 {
+//            print(firstNumber)
+//            firstNumber-=1
+//        }
+//
+//
+//        var myArray = [1, 15, 135, 10, 99]
+//        for numbers in myArray {
+//
+//            print(numbers)
+//        }
+//
+//        var myNumberList = [1, 5, 7]
+//        for i in 0 ..< myNumberList.count {
+//            print(myNumberList[i])
+//        }
+//
+//        let myNumberListReverse = [1, 5, 7, 10]
+//        for i in myNumberListReverse.reversed() {
+//            print(i)
+//        }
+//
+//        let myNumberListReverseTwo = [1, 5, 7, 10]
+//        for i in myNumberListReverseTwo {
+//            print(i)
+//        }
