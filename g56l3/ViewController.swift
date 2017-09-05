@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         //        for _ in 0..<oddNumbers.count {
         //            oddNumbers.removeLast()
         //        }
+
         print("Array's numbers have been removed")
 
         print("======================================================")
@@ -59,9 +60,6 @@ class ViewController: UIViewController {
         let arrayOne = [1, 2, 5]
         let arrayTwo = [7, 3, 9, 11]
         combineArrays(arrayOne: arrayOne, arrayTwo: arrayTwo)
-        //        let combineTwoArraysResult = arrayOne + arrayTwo
-        //
-        //        print("Combined arrays numbers: \(combineTwoArraysResult)")
 
         print("======================================================")
 
@@ -75,8 +73,6 @@ class ViewController: UIViewController {
         let stringArray: [String] = ["Paris", "London", "Tallinn", "Oslo", "Kiev"]
         let firstAndLastElementsInArrayPrint = firstAndLastElementsInArray(stringArray: stringArray)
         print(firstAndLastElementsInArrayPrint)
-        //        let finalArrayFromFirstAndLastElements = firstAndLastElementsInArray(stringArray: stringArray)
-        //        print(finalArrayFromFirstAndLastElements)
         let nonOptionalFirstElement: String! = firstAndLastElementsInArrayPrint.first
         let nonOptionalLastElement: String! = firstAndLastElementsInArrayPrint.last
         print(nonOptionalFirstElement)
